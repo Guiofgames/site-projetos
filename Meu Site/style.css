@@ -1,0 +1,123 @@
+/* Variáveis para facilitar a customização */
+:root {
+    --primary-color: #4f46e5;
+    --secondary-color: #1e293b;
+    --text-color: #333;
+    --bg-light: #f8fafc;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-light);
+}
+
+/* Navegação */
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: transparent; /* Começa transparente */
+    transition: background-color 0.4s ease, padding 0.4s ease; /* Transição suave */
+    z-index: 1000;
+    color: white; /* Cor do texto inicial */
+  }
+  
+  /* Esta classe será adicionada pelo JavaScript */
+  header.active {
+    background-color: #2c3e50; /* Cor final quando rolar */
+    padding: 10px 20px; /* Opcional: diminui a altura ao rolar */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Seção Hero */
+.hero {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    color: var(--white);
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+
+/* Seção de Conteúdo */
+.content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 50px 5%;
+}
+
+.card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--secondary-color);
+    color: var(--white);
+}
+
+/* Responsividade básica */
+@media (max-width: 600px) {
+    .hero h1 { font-size: 2rem; }
+    nav { flex-direction: column; }
+    nav ul { margin-top: 15px; }
+}
